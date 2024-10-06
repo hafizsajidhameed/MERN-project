@@ -2,11 +2,18 @@
   "name": "mern-crash-course",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "dev": "NODE_ENV=development nodemon backend/server.js",
-    "build": "npm install && install --prefix frontend && npm run build --prefix frontend",
-    "start": "cross-env NODE_ENV=production node backend/server.js"
-  },
+  "homepage": "https://hafizsajidhameed.github.io/MERN-project",
+
+ "scripts": {
+  "dev": "NODE_ENV=development nodemon backend/server.js",
+  "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+  "start": "cross-env NODE_ENV=production node backend/server.js",
+  "predeploy": "npm run build --prefix frontend",  
+  "deploy": "gh-pages -d frontend/dist"             
+},
+
+
+
   "type": "module",
   "keywords": [],
   "author": "",
@@ -20,6 +27,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "gh-pages": "^6.1.1",
     "nodemon": "^3.1.7"
   }
 }
