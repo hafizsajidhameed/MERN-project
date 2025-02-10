@@ -11,19 +11,20 @@ dotenv.config();
 import { connectDB } from "./config/db.js";
 
 
-const PORT = process.env.PORT || 3000;
 
 const app = express();
-app.use(express.json());
-const __dirname = path.resolve();
-app.use(cors());
 
+app.use(cors());
+const PORT = process.env.PORT || 3000;
+const __dirname = path.resolve();
+
+app.use(express.json());
 app.use("/api/products", productRoutes)
 
 if(process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '/frontend/dist')))
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'))
+        res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html' ))
     })
 }
 

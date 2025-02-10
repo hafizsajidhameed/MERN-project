@@ -38,9 +38,10 @@ export const Navbar = () => {
             fontSize={"10px"}
             bgGradient={"linear(to-r, green.300, blue.500)"}
             bgClip={"text"}
-            marginLeft={"-40px"}
+            marginLeft={"-2px"}
             fontWeight={'bold'}
             marginTop={'-5px'}
+            marginBottom={'10px'}
           >
             sajid hameed
           </Text>
